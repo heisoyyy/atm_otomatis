@@ -256,9 +256,9 @@ def download_file(driver, wait):
 # =====================================
 
 def wait_next():
-    now = datetime.datetime.now()
-    next_run = (now + datetime.timedelta(minutes=5)).replace(second=0, microsecond=0)
-    delay = (next_run - now).total_seconds()
+    now      = datetime.datetime.now()
+    next_run = (now + datetime.timedelta(hours=1)).replace(minute=1, second=0, microsecond=0)
+    delay    = (next_run - now).total_seconds()
     tulis_log(f"⏳ Menunggu sampai {next_run.strftime('%H:%M:%S')}")
     time.sleep(delay)
 
